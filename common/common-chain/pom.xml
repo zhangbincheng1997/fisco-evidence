@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>cn.edu.chain</groupId>
+        <artifactId>common</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <artifactId>common-chain</artifactId>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <fisco.version>2.8.0</fisco.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>cn.edu.chain</groupId>
+            <artifactId>common-core</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <!-- FISCO -->
+        <dependency>
+            <groupId>org.fisco-bcos.java-sdk</groupId>
+            <artifactId>fisco-bcos-java-sdk</artifactId>
+            <version>${fisco.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.ethereum</groupId>
+                    <artifactId>solcJ-all</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+</project>

@@ -1,0 +1,31 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: server
+  datasource:
+    url: jdbc:mysql://139.198.106.18:3306/chain?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=GMT%2B8
+    username: root
+    password: 365libtopdaydayUP
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10     # 最大连接数（默认10）
+      max-lifetime: 60000       # 连接最长存活时间（默认30分钟）
+      connection-timeout: 30000 # 获取连接超时时间（默认30秒）
+  redis:
+    host: 139.198.106.18
+    password: 365libtopdaydayUP
+    port: 6379
+    database: 0
+    timeout: 60000 # /etc/redis.conf tcp-keepalive 60
+    lettuce:
+      pool:
+        max-active: 8 # 最大连接数（默认8）
+        min-idle: 0   # 最小空闲连接数（默认0）
+        max-idle: 8   # 最大空闲连接数（默认8）
+        max-wait: -1  # 获取连接超时时间（默认不超时）
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
